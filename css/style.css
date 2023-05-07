@@ -249,9 +249,7 @@ ul{
     justify-content: space-between;
 }
 .down{
-    margin:0 0 0 600px
-}
-.down a{
+    margin:0 0 0 600px;
     padding: 5px 0px 5px 0px;
 }
 .down a input{
