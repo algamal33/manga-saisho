@@ -250,7 +250,7 @@ ul{
 }
 .down{
     margin:0 0 0 600px;
-    padding: 5px 0px 5px 0px;
+    padding:5px 0;
 }
 .down a input{
     background-image: linear-gradient(var(--main-color),var(--main-color-alllt));
