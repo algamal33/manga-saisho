@@ -1,0 +1,304 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body{
+    font-family:'Courier New', Courier, monospace;
+    background: var(--dark-them);
+}
+:root{
+    --main-color:rgb(255, 240, 0);
+    --main-color-alt:rgb(0, 0, 0);
+    --main-color-allt:rgb(100, 0, 0);
+    --main-color-alllt:#c86400;
+    --main-color-allllt: rgb(255, 200, 125);
+    --dark-them: rgb(255, 255, 255);
+    --dark-them-tow: #fc621a;
+    --dark-them-text:#000000;
+    --main-duration: 0.5s;
+}
+h1{
+    COLOR: FIREBRICK;
+}
+
+/* html{
+    scroll-behavior: smooth;
+} */
+a{
+    text-decoration: none;
+    color: var(--main-color-alllt);
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* small */
+@media (min-widht: 768px) {
+    .container{
+        width: 750px;
+    }
+}
+/* medium */
+@media (min-widht: 992px) {
+    .container{
+        width: 970px;
+    }
+}
+/* large */
+@media (min-widht: 1200px) {
+    .container{
+        width: 1170px;
+    }
+}
+/* start header */
+.header{
+    background: var(--dark-them);
+    position: relative;
+    -webkit-box-shadow: 0 0 10px #ddd;
+    -moz-box-shadow: 0 0 10px #ddd;
+    box-shadow: 0 0 10px #ddd;
+}
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+.header .logo{
+    color: var(--main-color); 
+    font-size: 26px;
+    font-weight: bold;
+    text-shadow: 2px 1px 1px rgb(0, 0, 0);
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+@media (max-width: 767px){
+    .header .logo{
+        width: 100%;
+    }
+}
+.header .main-nav{
+    display: flex;
+
+}
+.header .main-nav > li > a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 72px;
+    position: relative;
+    color: var(--dark-them-text);
+    padding: 0 30px ;
+    overflow: hidden;
+    transition: var(--main-duration);
+}
+@media (max-width: 767px){
+    .header .main-nav{
+        margin: auto;
+    }
+}
+@media (max-width: 767px){
+    .header .main-nav > li > a{
+        padding: 10px;
+        font-size: 14px;
+        height: 40px;
+    }
+}
+.header .main-nav > li > a::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color:var(--main-color);
+    top: 0;
+    left: -100%;
+    transition: var(--main-duration);
+}
+.header .main-nav > li > a:hover{
+    color: black;
+    background-color: rgb(235, 235, 235);
+}
+.header .main-nav > li > a:hover::before{
+    left: 0;
+}
+
+  /* End Header */
+  /* start landing */
+.landing{
+    position: relative;
+}
+.landing ::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -40px;
+    width: 100vh;
+    height: 100%;
+    background-image: url(../img/layered-steps-haikei.svg);
+    z-index: -1;
+    transform-origin: top left;
+}
+.landing .container{
+    min-height: calc(100vh - 72px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 120px;
+}
+
+.landing .text{
+    flex: 1;
+    margin:40px 0 0 700px ;
+}
+.landing .text h1{
+    font-size: 30px;
+    text-align: right;
+    margin: 0;
+    letter-spacing: -2px;
+    color:rgb(255, 0, 0);
+
+}
+@media (max-width:767){
+    .landing .text h1{
+        font-size: 18px;
+    }
+}
+.landing .text p{
+    font-size: 25px;
+    text-align: right;
+    line-height: 1.7;
+    margin: 5px 0 0;
+    color :var(--dark-them-text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: -1px;
+}
+@media (max-width:767){
+    .landing .text p{
+        font-size: 7.5px;
+    }
+}
+
+.landing .image img{
+    position: relative;
+    width: 300px;
+    left: 400px;
+    animation: up-and-down 4s linear infinite;
+}
+.landing .go-down{
+    color: #ffc800;
+    position: absolute;
+    bottom: 1px;
+    left: 52%;
+    transform: translateX(-50px);
+    transition: var(--main-duration);
+}
+.landing .go-down:hover{
+    color: var(--main-color-alllt);
+}
+.landing .go-down::before{
+background: none;
+}
+.landing .go-down i{
+    animation: bouncing 1.5s infinite;
+}
+  /* end landing */
+  /* start animation */
+@keyframes up-and-down {
+    0% ,100%{
+        top: 0;
+    }
+    50%{
+        top: -40px;
+    }
+}
+@keyframes bouncing {
+    0% ,10% ,20% ,50% ,80% ,100%{
+        transform: translatey(0);
+    }
+
+    40% ,60%{
+        transform: translateY(-10px);
+    }
+}
+  /* end animation */
+h2{
+    text-align: center;
+    text-shadow: 1px 2px 2px rgb(104, 104, 104);
+    color:rgb(255, 0, 0);
+}
+.disc{
+    text-align: center;
+    background-color: #ffc800;
+    position: relative;
+    -webkit-box-shadow: 0 0 10px #ddd;
+    -moz-box-shadow: 0 0 10px #ddd;
+    box-shadow: 0 0 10px #ddd;
+}
+.info{
+    content: "";
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 0 0  20px 0;
+    background-image: url(../img/stacked-steps-haikei.svg);
+}
+.down a input{
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:var(--dark-them-text);
+    background: rgba(255, 255, 255, 0.17);
+    height: 60px;
+    width: 120px;
+    margin: 5px 0px 10px 600px;
+    border: inset 5px #ff8000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.footer{
+    background-color: #ffe6006b;
+    color: black;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer .footer-title{
+    font-size: 1.3em;
+    font-weight: 600;
+
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+.footer span{
+    color: var(--main-color-alllt);
+    font-weight: bold;
+}
+.footer .socail-icons{
+    font-size: 1.3em;
+}
+.social-icons{
+    padding-top:20px;
+}
+#light_mode{
+    color: var(--dark-them-tow);
+    cursor: pointer;
+    display: flex;
+}
+#night_mode{
+    display: none;
+    color:var(--dark-them-tow);
+    cursor: pointer;
+}
