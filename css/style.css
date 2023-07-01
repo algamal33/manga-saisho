@@ -16,7 +16,7 @@ body{
     --dark-them: rgb(255, 255, 255);
     --dark-them-tow: #fc621a;
     --dark-them-text:#000000;
-    --main-duration: 0.5s;
+    --main-duration: 0.5s ease;
 }
 h1{
     COLOR: FIREBRICK;
